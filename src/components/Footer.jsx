@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 function Footer() {
   return (
@@ -8,9 +10,9 @@ function Footer() {
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-evenly">
           <div className="mb-6 md:mb-0 me-20">
-              <a href="https://flowbite.com/" className="flex items-center">
+              <Link to={"/"} className="flex items-center">
                   <img src="https://thechildrengreenbook.net/assets/images/_logo.png" className="w-64 me-3" alt="FlowBite Logo" />
-              </a>
+              </Link>
           </div>
           <div className="grid grid-cols-2 gap-16 sm:gap-20 sm:grid-cols-2">
               <div>
