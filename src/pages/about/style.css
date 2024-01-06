@@ -1,0 +1,22 @@
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Caveat:wght@700&display=swap');
+
+
+.about_hero{
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-image: url("https://assets-global.website-files.com/63a1cbc81b0e903002cf9cec/63f3c23016d299852d04b5e6_63d04bc8dc1e3b56fc058103_20-Books-Nurses-Should-Read.webp");
+    height: 300px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.about_hero h1{
+    font-size: 80px;
+    top: 7rem;
+    right: 19rem;
+    font-family: 'caveat' ;
+    
+}
