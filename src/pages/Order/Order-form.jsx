@@ -29,7 +29,7 @@ function Order_form() {
   
     return (
 
-    <div className="mx-auto w-full max-w-[550px] bg-orange-100 border p-3 px-5 rounded-lg">
+    <div className="mx-auto w-full max-w-[550px] bg-orange-100 border p-3 px-5 rounded-lg mt-3 md:mt-0">
       <form onSubmit={handleSubmit}>
         <div className="mb-5">
           <label
