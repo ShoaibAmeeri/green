@@ -260,7 +260,7 @@ export default function Nav() {
                     <Link
                         to={"/login"}
                        
-                        className="px-4 py-2  text-white bg-green-500 rounded-md  hover:bg-green-600"
+                        className="px-4 py-2 text-white bg-green-500 rounded-md  hover:bg-green-600"
                     >
                         Sign in
                     </Link>

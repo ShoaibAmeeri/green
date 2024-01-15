@@ -1,15 +1,16 @@
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 import { signUpSchema } from "../../schema";
-
+import postData  from "../../api/api" ;
 
 const initialValues = {
   name: "",
   email: "",
   password: "",
   confirm_password: "",
-  terms : ""
+ 
 };
+
 
 export default function Signup() {
   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
@@ -17,13 +18,16 @@ export default function Signup() {
       initialValues: initialValues,
       validationSchema: signUpSchema,
       onSubmit: (values) => {
-        console.log(
-          " ~ file: Registration.jsx ~ line 11 ~ Registration ~ values ",
-          values
-        );
-      },
+        console.log(values);
+        postData("http://localhost:8000/users", values).then((data) => {
+          console.log(data); // JSON data parsed by `data.json()` call
+        }).catch((error)=>{
+          alert("heres some exception")
+          console.log(error);
+        })
+      }
     });
-    console.log(errors)
+  
 
 
 
@@ -50,7 +54,7 @@ export default function Signup() {
         >
           <div>
             <label
-              for="name"
+              htmlFor="name"
               className="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your name
@@ -73,7 +77,7 @@ export default function Signup() {
           </div>
           <div>
             <label
-              for="email"
+              htmlFor="email"
               className="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
             >
               Your email
@@ -96,7 +100,7 @@ export default function Signup() {
           </div>
           <div>
             <label
-              for="password"
+              htmlFor="password"
               className="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
             >
               Password
@@ -119,7 +123,7 @@ export default function Signup() {
           </div>
           <div>
             <label
-              for="confirm-password"
+              htmlFor="confirm-password"
               className="block mb-1 text-sm font-medium text-gray-900 dark:text-white"
             >
               Confirm password
@@ -157,7 +161,7 @@ export default function Signup() {
             </div>
             <div className="ml-3 text-sm">
               <label
-                for="terms"
+                htmlFor="terms"
                 className="font-light text-gray-500 dark:text-gray-300"
               >
                 I accept the{" "}

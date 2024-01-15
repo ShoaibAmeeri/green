@@ -2,12 +2,13 @@ import React from "react";
 import "./Review.css";
 import { reviewSchema } from "../../schema";
 import { useFormik } from "formik";
+import postData from "../../api/api"
 
 const initialValues = {
-  Name: "",
-  Contact: "",
+  name: "",
+  contact: "",
   email: "",
-  Profession: "",
+  profession: "",
   message: "",
 };
 
@@ -17,13 +18,17 @@ function Review() {
       initialValues: initialValues,
       validationSchema: reviewSchema,
       onSubmit: (values) => {
-        console.log(
-          " ~ file: Registration.jsx ~ line 11 ~ Registration ~ values ",
-          values
-        );
+        console.log(values);
+        postData("http://localhost:8000/reviews", values)
+          .then((data) => {
+            console.log(data); // JSON data parsed by `data.json()` call
+          })
+          .catch((error) => {
+            alert("heres some exception");
+            // console.log(error);
+          });
       },
     });
-  console.log(errors);
 
   return (
     <div>
@@ -40,81 +45,81 @@ function Review() {
         </p>
         <form action="" onSubmit={handleSubmit}>
           <div className="mb-4 flex g-1 ">
-           <div>
-            <input
-              type="Name"
-              id="Name"
-              placeholder="Name"
-              name="Name"
-              className=" me-1 rounded border border-gray-300 bg-white py-1 px-3 pe-12 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-              value={values.Name}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-             {errors.Name && touched.Name ? (
-              <p className="form-error text-pink-600 font-medium">
-                {" "}
-                {errors.Name}{" "}
-              </p>
-            ) : null}
-           </div>
-           <div>
-            <input
-              type="Contact"
-              id="Contact"
-              placeholder="Contact"
-              name="Contact"
-              className=" pe-16 rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-              value={values.Contact}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-             {errors.Contact && touched.Contact ? (
-              <p className="form-error text-pink-600 font-medium">
-                {" "}
-                {errors.Contact}{" "}
-              </p>
-            ) : null}
-           </div>
+            <div>
+              <input
+                type="Name"
+                id="Name"
+                placeholder="Name"
+                name="name"
+                className=" me-1 rounded border border-gray-300 bg-white py-1 px-3 pe-12 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.name && touched.name ? (
+                <p className="form-error text-pink-600 font-medium">
+                  {" "}
+                  {errors.name}{" "}
+                </p>
+              ) : null}
+            </div>
+            <div>
+              <input
+                type="Contact"
+                id="Contact"
+                placeholder="Contact"
+                name="contact"
+                className=" pe-16 rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                value={values.contact}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.contact && touched.contact ? (
+                <p className="form-error text-pink-600 font-medium">
+                  {" "}
+                  {errors.contact}{" "}
+                </p>
+              ) : null}
+            </div>
           </div>
           <div className="mb-4 flex g-1 ">
-           <div>
-           <input
-              type="email"
-              id="email"
-              placeholder="E-mail"
-              name="email"
-              className="pe-12 me-1 rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-              value={values.email}
-              onChange={handleChange}
-              onBlur={handleBlur}
-           />
-           {errors.email && touched.email ? (
-              <p className="form-error text-pink-600 font-medium">
-                {" "}
-                {errors.email}{" "}
-              </p>
-            ) : null}
-           </div>
+            <div>
+              <input
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                name="email"
+                className="pe-12 me-1 rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.email && touched.email ? (
+                <p className="form-error text-pink-600 font-medium">
+                  {" "}
+                  {errors.email}{" "}
+                </p>
+              ) : null}
+            </div>
 
-           <div>
-            <input
-              type="Profession"
-              id="Profession"
-              placeholder="Profession"
-              name="Profession"
-              className="pe-16 rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
-              value={values.Profession}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.Profession && touched.Profession ? (
-              <p className="form-error text-pink-600 font-medium">
-                {" "}
-                {errors.Profession}{" "}
-              </p>
-            ) : null}
-           </div>
+            <div>
+              <input
+                type="Profession"
+                id="Profession"
+                placeholder="Profession"
+                name="profession"
+                className="pe-16 rounded border border-gray-300 bg-white py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                value={values.profession}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.profession && touched.profession ? (
+                <p className="form-error text-pink-600 font-medium">
+                  {" "}
+                  {errors.profession}{" "}
+                </p>
+              ) : null}
+            </div>
           </div>
           <div className="mb-4">
             <label
@@ -138,7 +143,9 @@ function Review() {
               </p>
             ) : null}
           </div>
-          <button className="rounded border-0 bg-green-500 py-2 px-6 text-lg text-white hover:bg-green-600 focus:outline-none">
+          <button className="rounded border-0 bg-green-500 py-2 px-6 text-lg text-white hover:bg-green-600 focus:outline-none"
+                  type="submit"
+          >
             Send
           </button>
           <p className="mt-3 text-xs text-gray-500">

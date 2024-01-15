@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import React from "react";
 import { orderSchema } from "../../schema";
+import postData from "../../api/api";
 
 const initialValues = {
   name: "",
@@ -19,10 +20,14 @@ function Order_form() {
       initialValues: initialValues,
       validationSchema: orderSchema,
       onSubmit: (values) => {
-        console.log(
-          " ~ file: Registration.jsx ~ line 11 ~ Registration ~ values ",
-          values
-        );
+        console.log(values);
+        postData("http://localhost:8000/buyers", values ).then((data) => {
+          alert("success")
+          console.log(data); // JSON data parsed by `data.json()` call
+        }).catch((error)=>{
+          alert("heres some exception")
+          console.log(error);
+        })
       },
     });
     
@@ -33,7 +38,7 @@ function Order_form() {
       <form onSubmit={handleSubmit}>
         <div className="mb-5">
           <label
-            for="name"
+            htmlFor="name"
             className="mb-3 block text-base font-medium text-[#07074D]"
           >
             Full Name
@@ -57,7 +62,7 @@ function Order_form() {
         </div>
         <div className="mb-5">
           <label
-            for="phone"
+            htmlFor="phone"
             className="mb-3 block text-base font-medium text-[#07074D]"
           >
             Phone Number
@@ -81,7 +86,7 @@ function Order_form() {
         </div>
         <div className="mb-5">
           <label
-            for="email"
+            htmlFor="email"
             className="mb-3 block text-base font-medium text-[#07074D]"
           >
             Email Address
@@ -108,7 +113,7 @@ function Order_form() {
           <div className="w-full px-3 sm:w-1/2">
             <div className="mb-5">
               <label
-                for="date"
+                htmlFor="date"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Date
@@ -124,7 +129,7 @@ function Order_form() {
           <div className="w-full px-3 sm:w-1/2">
             <div className="mb-5">
               <label
-                for="number"
+                htmlFor="number"
                 className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 No. of Copies
