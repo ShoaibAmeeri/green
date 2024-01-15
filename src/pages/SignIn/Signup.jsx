@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 import { signUpSchema } from "../../schema";
 
+
 const initialValues = {
   name: "",
   email: "",
@@ -22,6 +23,8 @@ export default function Signup() {
         );
       },
     });
+    console.log(errors)
+
 
 
   return (
@@ -146,6 +149,9 @@ export default function Signup() {
                 className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
                 required=""
                 name="terms"
+                value={values.terms}
+              onChange={handleChange}
+              onBlur={handleBlur}
               />
               
             </div>
@@ -162,10 +168,10 @@ export default function Signup() {
                   Terms and Conditions
                 </a>
               </label>
-              {errors.name && touched.name ? (
+              {errors.terms && touched.terms ? (
               <p className="form-error text-pink-600 font-medium">
                 {" "}
-                {errors.name}{" "}
+                {errors.terms }{" "}
               </p>
             ) : null}
             </div>

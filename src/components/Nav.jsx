@@ -225,32 +225,30 @@ export default function Nav() {
                             navbar ? "block" : "hidden"
                         }`}
                     >
-                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 ">
+                        <ul className="items-center justify-center space-y-8 md:flex lg:space-x-6 md:space-x-4 md:space-y-0 ">
                             <li className="text-black font-semibold text-lg   hover:text-green-500">
-                                <Link to={"/"} href="javascript:void(0)" >HOME</Link>
+                                <Link to={"/"}  >HOME</Link>
                             </li>
                             <li className="text-black font-semibold text-lg hover:text-green-500">
-                                <Link to={"/about"} href="javascript:void(0)">ABOUT US</Link>
+                                <Link to={"/about"} >ABOUT US</Link>
                             </li>
                             <li className="text-black font-semibold text-lg hover:text-green-500">
-                                <Link to={"/review"}  href="javascript:void(0)">REVIEW</Link>
+                                <Link to={"/review"}  >REVIEW</Link>
                             </li>
                             <li className="text-black font-semibold text-lg hover:text-green-500">
-                                <Link to={"/books"} href="javascript:void(0)">BOOKS</Link>
+                                <Link to={"/books"} >BOOKS</Link>
                             </li>
                         </ul>
 
-                        <div className="mt-3 space-y-2 md:hidden md:inline-block">
+                        <div className="mt-3 space-y-2 md:hidden ">
                     <Link
                         to={"/login"}
-                        href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-white bg-green-500 rounded-md shadow hover:bg-green-600"
                     >
                         Sign in
                     </Link>
                     <Link
                       to={'/signup'}
-                        href="javascript:void(0)"
                         className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-gray-100 rounded-md shadow hover:bg-gray-300"
                     >
                         Sign up
@@ -258,17 +256,17 @@ export default function Nav() {
                 </div>
                     </div>
                 </div>
-                <div className="hidden space-x-2 md:inline-block">
+                <div className="hidden  md:flex gap-4">
                     <Link
                         to={"/login"}
-                        href="javascript:void(0)"
-                        className="px-4 py-2 text-white bg-green-500 rounded-md shadow hover:bg-green-600"
+                       
+                        className="px-4 py-2  text-white bg-green-500 rounded-md  hover:bg-green-600"
                     >
                         Sign in
                     </Link>
                     <Link
                     to={'signup'}
-                        href="javascript:void(0)"
+                        
                         className="px-4 py-2 text-gray-800 bg-gray-100 rounded-md shadow hover:bg-gray-300"
                     >
                         Sign up

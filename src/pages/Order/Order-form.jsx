@@ -134,7 +134,7 @@ function Order_form() {
                 name="number"
                 id="number"
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                value={values.number}
+                value={values.number < 0 ? 1 : values.number}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
