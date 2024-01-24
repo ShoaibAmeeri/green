@@ -168,7 +168,7 @@ export default function Nav() {
     const [navbar, setNavbar] = useState(false);
 
     return (
-        <nav className="w-full ps-12 md:h-24 sticky top-0 bg-white shadow-lg mb-6 z-10 pe-12">
+        <nav className="w-full dark:bg-gray-400 ps-12 md:h-24 sticky top-0 bg-white shadow-lg mb-6 z-10 pe-12">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">

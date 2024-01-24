@@ -1,57 +1,100 @@
 const images = [
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch1.jpg",
+      id : 1,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch1.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/intasab.jpg",
+      id : 2,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/intasab.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/preface.jpg",
+      id : 3,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch4.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch4.jpg",
+      id : 4,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/preface.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch3.jpg",
+      id : 5,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch3.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch2.jpg",
+      id : 6,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch2.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch7.jpg",
+      id : 7,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch7.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch6.jpg",
+      id : 8,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch6.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch5.jpg",
+      id : 9,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch10.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch10.jpg",
+      id : 9,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch5.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch9.jpg",
+      id : 9,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch5.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
     {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch8.jpg",
+      id : 9,
+      name : "english book",
+      image: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch5.jpg",
+      price : "3000",
+      description : "this is a book of english which is very important this tsgjapo aoijs foaji",
+      stock : "20"
     },
-    {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch13.jpg",
-    },
-    {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch12.jpg",
-    },
-    {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch11.jpg",
-    },
-    {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch16.jpg",
-    },
-    {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch15.jpg",
-    },
-    {
-      src: "https://thechildrengreenbook.net/assets/images/book-illustrations/thumbnail/ch15.jpg",
-    },
+  
   ];
 export default images;

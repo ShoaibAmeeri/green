@@ -10,6 +10,7 @@ import OrderCopy from "./pages/Order/OrderCopy";
 import LogIn from "./pages/SignIn/Login";
 import Signup from "./pages/SignIn/Signup";
 import Error from "./components/Error";
+import BookShow from "./components/BookShow";
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
         <Route path="/order" element={ <OrderCopy/> }/>
         <Route path="/login" element={ <LogIn/> }/>
         <Route path="/signup" element={ <Signup/> }/>
+        <Route path="/books/:id" element={<BookShow/>} />
         <Route path="/*" element={ <Error/> }/>
 
 
