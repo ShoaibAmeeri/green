@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Nav from "./components/Nav";
 import Home from "./pages/home/Home";
-// import Footer from "./components/footer";
+import Footer from "./components/footer";
 import AboutUs from "./pages/about/AboutUs";
 import { Router, Route, createBrowserRouter, BrowserRouter, Routes } from "react-router-dom";
 import Books from "./pages/Books/Books";
@@ -37,7 +37,7 @@ function App() {
 
 
       </Routes>
-      {/* <Footer/>  */}
+      <Footer/> 
     </BrowserRouter>
   
     </div> 
