@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import images from "../../components/data/chapters";
 import ChCard from "../../components/ChCard";
 import axios from "axios";
 
@@ -21,7 +20,7 @@ function Chapters() {
         <span className="text-green-500">GREEN</span> BOOK CHAPTERS
       </h1>
       <div className="grid md:grid-cols-3 sm:grid-cols-2">
-        {data.map((img) => (
+        {data.map((img, i) => (
           <>
             {/* {console.log(img._id)} */}
             <ChCard src={img.image} key={img._id} id={img._id} />
