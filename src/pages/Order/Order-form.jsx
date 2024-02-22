@@ -2,38 +2,37 @@ import { useFormik } from "formik";
 import React from "react";
 import { orderSchema } from "../../schema";
 import postData from "../../api/api";
-
+import { useNavigate } from "react-router-dom";
 const initialValues = {
   name: "",
   phone: "",
   email: "",
   number: "",
   address: "",
- 
 };
 
 function Order_form() {
-  
-
-   const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
+  const navigate = useNavigate();
+  const { values, errors, handleBlur, touched, handleChange, handleSubmit } =
     useFormik({
       initialValues: initialValues,
       validationSchema: orderSchema,
       onSubmit: (values) => {
         console.log(values);
-        postData("http://localhost:8000/buyers", values ).then((data) => {
-          alert("success")
-          console.log(data); // JSON data parsed by `data.json()` call
-        }).catch((error)=>{
-          alert("heres some exception")
-          console.log(error);
-        })
+        const response = postData("http://localhost:8000/buyers", values)
+          .then((data) => {
+            // alert("success")
+            console.log(data); // JSON data parsed by `data.json()` call
+            navigate("/confirm-order");
+          })
+          .catch((error) => {
+            alert("heres some exception");
+            console.log(error);
+          });
       },
     });
-    
-  
-    return (
 
+  return (
     <div className="mx-auto w-full max-w-[550px] bg-orange-100 border p-3 px-5 rounded-lg mt-3 md:mt-0">
       <form onSubmit={handleSubmit}>
         <div className="mb-5">
@@ -53,12 +52,12 @@ function Order_form() {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-            {errors.name && touched.name ? (
-              <p className="form-error text-pink-600 font-medium">
-                {" "}
-                {errors.name}{" "}
-              </p>
-            ) : null}
+          {errors.name && touched.name ? (
+            <p className="form-error text-pink-600 font-medium">
+              {" "}
+              {errors.name}{" "}
+            </p>
+          ) : null}
         </div>
         <div className="mb-5">
           <label
@@ -77,12 +76,12 @@ function Order_form() {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-            {errors.phone && touched.phone ? (
-              <p className="form-error text-pink-600 font-medium">
-                {" "}
-                {errors.phone}{" "}
-              </p>
-            ) : null}
+          {errors.phone && touched.phone ? (
+            <p className="form-error text-pink-600 font-medium">
+              {" "}
+              {errors.phone}{" "}
+            </p>
+          ) : null}
         </div>
         <div className="mb-5">
           <label
@@ -100,14 +99,13 @@ function Order_form() {
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
-            
           />
-            {errors.email && touched.email ? (
-              <p className="form-error text-pink-600 font-medium">
-                {" "}
-                {errors.email}{" "}
-              </p>
-            ) : null}
+          {errors.email && touched.email ? (
+            <p className="form-error text-pink-600 font-medium">
+              {" "}
+              {errors.email}{" "}
+            </p>
+          ) : null}
         </div>
         <div className="-mx-3 flex flex-wrap">
           <div className="w-full px-3 sm:w-1/2">
@@ -145,11 +143,11 @@ function Order_form() {
               />
 
               {errors.number && touched.number ? (
-              <p className="form-error text-pink-600 font-medium">
-                {" "}
-                {errors.number}{" "}
-              </p>
-            ) : null}
+                <p className="form-error text-pink-600 font-medium">
+                  {" "}
+                  {errors.number}{" "}
+                </p>
+              ) : null}
             </div>
           </div>
         </div>
@@ -170,13 +168,13 @@ function Order_form() {
                   value={values.address}
                   onChange={handleChange}
                   onBlur={handleBlur}
-               />
+                />
                 {errors.address && touched.address ? (
-              <p className="form-error text-pink-600 font-medium">
-                {" "}
-                {errors.address}{" "}
-              </p>
-            ) : null}
+                  <p className="form-error text-pink-600 font-medium">
+                    {" "}
+                    {errors.address}{" "}
+                  </p>
+                ) : null}
               </div>
             </div>
           </div>
@@ -184,8 +182,9 @@ function Order_form() {
 
         <div>
           <button
-          type="submit"
-          className="hover:shadow-form w-full rounded-md bg-green-500 hover:bg-green-600 py-3 px-8 text-center text-base font-semibold text-white outline-none">
+            type="submit"
+            className="hover:shadow-form w-full rounded-md bg-green-500 hover:bg-green-600 py-3 px-8 text-center text-base font-semibold text-white outline-none"
+          >
             Buy a Book
           </button>
         </div>
