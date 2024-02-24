@@ -21,10 +21,10 @@ function Chapters() {
       </h1>
       <div className="grid md:grid-cols-3 sm:grid-cols-2">
         {data.map((img, i) => (
-          <>
-            {/* {console.log(img._id)} */}
+          
+           
             <ChCard src={img.image} key={img._id} id={img._id} />
-          </>
+          
         ))}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../store/auth";
 
 function LoginIn() {
   const [loading, setloading] = useState(false);
@@ -8,6 +9,10 @@ function LoginIn() {
     email: "",
     password: "",
   });
+
+  const { storeTokenInLS } = useAuth();
+  const navigate = useNavigate();
+
   const handleInput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -18,7 +23,6 @@ function LoginIn() {
     });
   };
 
-  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     setloading(true);
     e.preventDefault();
@@ -31,15 +35,17 @@ function LoginIn() {
       body: JSON.stringify(user),
     });
     if (response.ok) {
-      setloading(false);
       alert("login Successfully");
+      setloading(false);
       const res_data = await response.json();
-      // storeTokenInLS(res_data.token)
+      console.log(res_data.user.token);
+      storeTokenInLS(res_data.token);
 
       setUser({ email: "", password: "" });
       navigate("/");
     } else {
       alert("invalid credentials");
+      setloading(false);
     }
   };
 

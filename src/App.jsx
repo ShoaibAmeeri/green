@@ -13,6 +13,7 @@ import Error from "./components/Error";
 import BookShow from "./components/BookShow";
 import ChangePass from "./pages/SignIn/ChangePass";
 import ConfirmOrder from "./pages/Order/ConfirmOrder";
+import Logout from "./pages/SignIn/Logout";
 
 function App() {
   
@@ -31,6 +32,7 @@ function App() {
         <Route path="/review" element={ <Review/> }/>
         <Route path="/order" element={ <OrderCopy/> }/>
         <Route path="/login" element={ <LogIn/> }/>
+        <Route path="/logout" element={ <Logout/> }/>
         <Route path="/signup" element={ <Signup/> }/>
         <Route path="/changepass" element={ <ChangePass/> }/>
         <Route path="/books/:id" element={<BookShow/>} />
