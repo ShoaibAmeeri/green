@@ -1,9 +1,9 @@
 import { useFormik } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signUpSchema } from "../../schema";
 import postData from "../../api/api";
 import { useState } from "react";
-
+ 
 
 const initialValues = {
   name: "",
@@ -13,6 +13,7 @@ const initialValues = {
 };
 
 export default function Signup() {
+  const navigate = useNavigate()
 
   const [loading, setloading] = useState(false)
 
@@ -27,6 +28,7 @@ export default function Signup() {
           .then((data) => {
             console.log(data);
             setloading(false)
+            navigate("/login")
           })
           .catch((error) => {
             alert("heres some exception");
